@@ -1,22 +1,63 @@
+/* general styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body styling */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
     color: #333;
+    background-color: #f9f9f9;
+    padding: 40px 20px; /* space around all the content */
 }
-.project-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
+
+/* header styling */
+header {
+    max-width: 800px;
+    margin: 0 auto; 
+    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
 }
-.btn {
-    display: inline-block;
-    background: #0078d4;
-    color: white;
-    padding: 8px 16px;
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+/* navigation links */
+nav {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+nav a {
     text-decoration: none;
-    border-radius: 4px;
+    color: #3498db;
+    font-weight: 600;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* vertical separator styling */
+nav {
+    color: #ddd; /* Makes the "|" pipe character look subtle */
 }
