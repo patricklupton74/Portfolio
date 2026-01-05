@@ -32,8 +32,8 @@ h1 {
     font-size: 3.5rem;
     letter-spacing: -1px;
     color: var(--text-main);
-    /* Subtle text shadow for that classy depth */
     text-shadow: 2px 2px 0px rgba(157, 133, 255, 0.2); 
+    margin-bottom: 10px;
 }
 
 p {
