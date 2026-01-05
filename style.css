@@ -22,7 +22,7 @@ body {
     font-size: 17px; /* Slightly larger for this specific font */
     line-height: 1.6;
     margin: 0;
-    padding: 60px 20px;
+    padding: 20px 20px;
 }
 
 /* header styling */
@@ -33,21 +33,21 @@ h1 {
     letter-spacing: -1px;
     color: var(--text-main);
     text-shadow: 2px 2px 0px rgba(157, 133, 255, 0.2); 
-    margin-bottom: 10px;
 }
 
 p {
     color: var(--accent-purple);
     font-style: italic; /* Fantasque has beautiful italics */
     opacity: 0.9;
+    margin-bottom: 10px;
 }
 
 /* navigation links */
 nav {
     display: flex;
-    gap: 30px;
+    gap: 20px;
     border-top: 1px solid rgba(157, 133, 255, 0.1); /* Very faint line */
-    padding-top: 30px;
+    padding-top: 20px;
 }
 
 nav a {
