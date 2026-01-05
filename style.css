@@ -17,34 +17,29 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-main);
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    /* Apply Fantasque here */
+    font-family: 'Fantasque Sans Mono', monospace;
+    font-size: 17px; /* Slightly larger for this specific font */
+    line-height: 1.6;
     margin: 0;
     padding: 60px 20px;
-    line-height: 1.6;
 }
 
 /* header styling */
-header {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: left; /* Left align feels more "editorial" and classy */
-}
-
 h1 {
+    font-family: 'Fantasque Sans Mono', monospace;
+    font-weight: 700;
     font-size: 3.5rem;
-    font-weight: 600;
-    letter-spacing: -2px; /* Tight tracking is very modern/classy */
+    letter-spacing: -1px;
     color: var(--text-main);
-    margin-bottom: 10px;
+    /* Subtle text shadow for that classy depth */
+    text-shadow: 2px 2px 0px rgba(157, 133, 255, 0.2); 
 }
 
-header p {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; 
+p {
     color: var(--accent-purple);
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
+    font-style: italic; /* Fantasque has beautiful italics */
+    opacity: 0.9;
 }
 
 /* navigation links */
