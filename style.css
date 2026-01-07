@@ -1,9 +1,20 @@
 /* colours */
 :root {
-    --bg-color: #0d0b14;      /* "Deep midnight charcoal-purple" */
-    --accent-purple: #9d85ff;  /* "Soft, classy lavender-purple" */
-    --text-main: #e0ddef;      /* "Off-white with a hint of purple" */
-    --text-dim: #8e8a9a;       /* "Muted grey-purple for secondary text" */
+  /* Background */
+  --bg-color: #F8FAFC;        /* Cool off-white, clean and modern */
+
+  /* Primary Text */
+  --text-main: #0F172A;       /* Deep navy-charcoal for excellent readability */
+
+  /* Secondary / Muted Text */
+  --text-dim: #475569;        /* Slate gray for metadata and subtitles */
+
+  /* Accent (name preserved intentionally) */
+  --accent-purple: #2563EB;   /* Professional blue for links & CTAs */
+
+  /* Optional UI helpers */
+  --border-color: #E2E8F0;    /* Subtle separators */
+  --hover-accent: #1D4ED8;    /* Hover / active states */
 }
 
 /* general styling */
