@@ -1,6 +1,6 @@
 /* Global reset + sensible defaults */
 :root {
-  --bg: #0b0d12;
+  --bg: #0e1117;
   --panel: rgba(255, 255, 255, 0.06);
   --border: rgba(255, 255, 255, 0.12);
   --text: rgba(255, 255, 255, 0.92);
@@ -19,13 +19,10 @@ html, body { height: 100%; }
 
 body {
   margin: 0;
-  font-family: "Fantasque Sans Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
   line-height: 1.65;
   color: var(--text);
-  background:
-    radial-gradient(900px 650px at 18% 20%, rgba(122, 162, 255, 0.16), transparent 55%),
-    radial-gradient(700px 520px at 82% 30%, rgba(255, 255, 255, 0.08), transparent 55%),
-    var(--bg);
+  background: var(--bg);
 }
 
 /* Layout container: applies to header/main blocks on both pages */
@@ -40,7 +37,7 @@ header {
   padding: 28px 26px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+  background: var(--bg);
   box-shadow: var(--shadow);
 }
 
@@ -133,7 +130,7 @@ a:hover {
   padding: 28px 26px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+  background: var(--bg);
   box-shadow: var(--shadow);
 }
 
@@ -228,7 +225,7 @@ li {
   padding: 26px;
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+  background: var(--bg);
   margin-bottom: 26px;
 }
 
