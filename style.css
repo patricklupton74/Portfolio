@@ -1,80 +1,219 @@
-/* colours */
+/* Global reset + sensible defaults */
 :root {
-  /* Background */
-  --bg-color: #F8FAFC;        /* Cool off-white, clean and modern */
-
-  /* Primary Text */
-  --text-main: #0F172A;       /* Deep navy-charcoal for excellent readability */
-
-  /* Secondary / Muted Text */
-  --text-dim: #475569;        /* Slate gray for metadata and subtitles */
-
-  /* Accent (name preserved intentionally) */
-  --accent-purple: #2563EB;   /* Professional blue for links & CTAs */
-
-  /* Optional UI helpers */
-  --border-color: #E2E8F0;    /* Subtle separators */
-  --hover-accent: #1D4ED8;    /* Hover / active states */
+  --bg: #0b0d12;
+  --panel: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
+  --muted2: rgba(255, 255, 255, 0.56);
+  --link: #7aa2ff;
+  --linkHover: #a8c0ff;
+  --shadow: 0 18px 55px rgba(0, 0, 0, 0.5);
+  --radius: 16px;
+  --max: 860px;
 }
 
-/* general styling */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-/* body styling */
+html, body { height: 100%; }
+
 body {
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    /* Apply Fantasque here */
-    font-family: 'Fantasque Sans Mono', monospace;
-    font-size: 17px; /* Slightly larger for this specific font */
-    line-height: 1.6;
-    margin: 0;
-    padding: 0px 20px;
+  margin: 0;
+  font-family: "Fantasque Sans Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  line-height: 1.65;
+  color: var(--text);
+  background:
+    radial-gradient(900px 650px at 18% 20%, rgba(122, 162, 255, 0.16), transparent 55%),
+    radial-gradient(700px 520px at 82% 30%, rgba(255, 255, 255, 0.08), transparent 55%),
+    var(--bg);
 }
 
-/* header styling */
+/* Layout container: applies to header/main blocks on both pages */
+header, main {
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* A “panel” look for content without making it feel like a template */
+header {
+  margin-top: 56px;
+  padding: 28px 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+  box-shadow: var(--shadow);
+}
+
+/* Headings */
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.015em;
+}
+
 h1 {
-    font-family: 'Fantasque Sans Mono', monospace;
-    font-weight: 700;
-    font-size: 2.5rem;
-    letter-spacing: -1px;
-    color: var(--text-main);
-    text-shadow: 2px 2px 0px rgba(157, 133, 255, 0.2); 
+  font-size: clamp(2.1rem, 4vw, 3.0rem);
+  font-weight: 700;
 }
 
+h2 {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin-top: 26px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin-top: 18px;
+  margin-bottom: 6px;
+}
+
+/* Paragraphs */
 p {
-    color: var(--accent-purple);
-    font-style: italic; /* Fantasque has beautiful italics */
-    opacity: 0.9;
-    margin-bottom: 8.5px;
+  margin: 0 0 14px 0;
+  color: var(--text);
+  max-width: 78ch;
 }
 
-/* navigation links */
-nav {
-    display: flex;
-    gap: 20px;
-    border-top: 1px solid rgba(157, 133, 255, 0.1); /* Very faint line */
-    padding-top: 10px;
+header p:first-of-type {
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 16px;
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--text-dim);
-    font-size: 0.9rem;
-    font-weight: 400;
-    transition: all 0.4s ease;
+/* Links */
+a {
+  color: var(--link);
+  text-decoration: none;
 }
 
-nav a:hover {
-    color: var(--accent-purple);
-    text-shadow: 0 0 10px rgba(157, 133, 255, 0.5);
+a:hover {
+  color: var(--linkHover);
+  text-decoration: underline;
 }
 
-/* vertical separator styling */
-nav {
-    color: #ddd; /* Makes the "|" pipe character look subtle */
+/* Link row on homepage */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.links span {
+  color: var(--muted2);
+  user-select: none;
+}
+
+/* Make the links feel like deliberate actions, not random hrefs */
+.links a {
+  display: inline-flex;
+  padding: 8px 10px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.links a:hover {
+  background: rgba(122,162,255,0.16);
+  border-color: rgba(122,162,255,0.28);
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* CV page helpers (works with simple semantic HTML) */
+.cv {
+  margin-top: 56px;
+  padding: 28px 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.05));
+  box-shadow: var(--shadow);
+}
+
+.cv-meta {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.cv-meta a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cv-meta a:hover {
+  color: var(--text);
+}
+
+/* Lists */
+ul {
+  margin: 10px 0 0 18px;
+  padding: 0;
+}
+
+li {
+  margin: 7px 0;
+  color: var(--text);
+}
+
+/* Two-column layout for skills (optional if you use it) */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+@media (min-width: 780px) {
+  .two-col { grid-template-columns: 1fr 1fr; }
+}
+
+/* Reduce motion preference (good practice) */
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
+
+/* Print: make CV printable */
+@media print {
+  :root {
+    --bg: #fff;
+    --text: #000;
+    --muted: #222;
+    --muted2: #333;
+    --border: #ccc;
+    --panel: #fff;
+    --shadow: none;
+    --link: #000;
+    --linkHover: #000;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  header {
+    box-shadow: none;
+    background: #fff;
+    border: none;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .cv {
+    box-shadow: none;
+    background: #fff;
+    border: none;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .links { display: none; } /* hide action buttons on print */
+  a { color: #000; text-decoration: none; }
 }
