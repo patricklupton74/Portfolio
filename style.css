@@ -217,3 +217,47 @@ li {
   .links { display: none; } /* hide action buttons on print */
   a { color: #000; text-decoration: none; }
 }
+
+/* CV layout improvements */
+.cv{
+  width: min(900px, calc(100% - 48px));
+  margin: 48px auto;
+}
+
+.cv-head{
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+  margin-bottom: 26px;
+}
+
+.cv-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px 12px;
+  margin: 8px 0 0;
+  color: rgba(255,255,255,0.72);
+}
+
+.cv section{ margin: 28px 0; }
+
+.cv h2{
+  margin: 28px 0 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.70);
+}
+
+.cv h3{
+  margin: 16px 0 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.cv p, .cv li{ max-width: 78ch; }
+
+.cv ul{ margin: 10px 0 0 20px; }
+.cv li{ margin: 7px 0; }
+
